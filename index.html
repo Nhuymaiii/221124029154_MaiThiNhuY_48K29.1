@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doanh số bán hàng</title>
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <h1 id="title">BÀI TẬP 07 (D3.js)</h1> 
+    <div id="nav">
+        <button id="Q1" onclick="showChart('Q1')">Q1</button>
+        <button id="Q2" onclick="showChart('Q2')">Q2</button>
+        <button id="Q3" onclick="showChart('Q3')">Q3</button>
+        <button id="Q4" onclick="showChart('Q4')">Q4</button>
+        <button id="Q5" onclick="showChart('Q5')">Q5</button>
+        <button id="Q6" onclick="showChart('Q6')">Q6</button>
+        <button id="Q7" onclick="showChart('Q7')">Q7</button>
+        <button id="Q8" onclick="showChart('Q8')">Q8</button>
+        <button id="Q9" onclick="showChart('Q9')">Q9</button>
+    </div>
+
+    <div id="chart-container">
+        <svg id="chart-Q1" width="600" height="400"></svg>
+        <svg id="chart-Q2" width="600" height="400"></svg>
+        <svg id="chart-Q3" width="600" height="400"></svg>
+        <svg id="chart-Q4" width="600" height="400"></svg>
+        <svg id="chart-Q5" width="600" height="400"></svg>
+        <svg id="chart-Q6" width="600" height="400"></svg>
+        <svg id="chart-Q7" width="600" height="400"></svg>
+        <svg id="chart-Q8" width="600" height="400"></svg>
+        <svg id="chart-Q9" width="600" height="400"></svg>
+    </div>
+
+    <script>
+        function showChart(chartId) {
+            document.querySelectorAll("#chart-container svg").forEach(svg => {
+                svg.style.display = "none";
+            });
+            document.getElementById(`chart-${chartId}`).style.display = "block";
+            document.querySelectorAll("#nav button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            document.getElementById(chartId).classList.add("active");
+        }
+        showChart('Q1');
+    </script>
+
+    <script src="Q1.js" defer></script>
+    <script src="Q2.js" defer></script>
+    <script src="Q3.js" defer></script>
+    <script src="Q4.js" defer></script>
+    <script src="Q5.js" defer></script>
+    <script src="Q6.js" defer></script>
+    <script src="Q7.js" defer></script>
+    <script src="Q8.js" defer></script>
+    <script src="Q9.js" defer></script>
+</body>
+</html>
